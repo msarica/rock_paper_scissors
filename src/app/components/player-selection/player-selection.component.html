@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      Player1
+      <app-player [player]="players[1]" (onReady)="playerReady($event, 1)" [canBeComputer]="false"></app-player>
+    </div>
+
+    <div class="col-sm">
+      Player2
+      <app-player [player]="players[2]" (onReady)="playerReady($event, 2)"></app-player>
+
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-lg btn-primary" *ngIf="canStart" (click)="startGame()">
+  START
+</button>

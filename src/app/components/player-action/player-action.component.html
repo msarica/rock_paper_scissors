@@ -1,0 +1,14 @@
+{{player.name}}
+
+<div *ngIf="selectionNeeded">
+
+  <div class="btn btn-md btn-primary" *ngFor="let action of actions" (click)="select(action)">
+    {{action}}
+  </div>
+
+</div>
+
+<div *ngIf="!selectionNeeded">
+
+  Selected!
+</div>

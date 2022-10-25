@@ -1,0 +1,36 @@
+<ng-container *ngIf="mode ==='start'">
+  <div>
+    <button (click)="newGame()" class="btn btn-lg btn-primary">
+      Start Game
+    </button>
+
+    <button *ngIf="canContinue" (click)="continue()" class="btn btn-lg btn-primary">
+      Continue
+    </button>
+
+  </div>
+
+</ng-container>
+
+<ng-container *ngIf="mode === 'playerSelection'">
+  <div>
+    <app-player-selection></app-player-selection>
+  </div>
+</ng-container>
+
+
+<ng-container *ngIf="mode === 'gamePlay'">
+  <app-scoreboard></app-scoreboard>
+
+  <button class="btn btn-sm btn-success" (click)="saveGame()">
+    Save
+  </button>
+  <hr>
+
+  <app-player-action [player]="players[0]">
+  </app-player-action>
+
+  <app-player-action [player]="players[1]">
+  </app-player-action>
+
+</ng-container>

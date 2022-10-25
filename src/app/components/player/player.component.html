@@ -1,0 +1,23 @@
+<div *ngIf="player">
+  {{ player.name }}
+</div>
+
+
+<div *ngIf="!player">
+  <div class="form-check" *ngIf="!isComputer">
+    <input type="text" class="form-control" [(ngModel)]="name" [disabled]="isComputer">
+  </div>
+
+  <div class="form-check" *ngIf="canBeComputer">
+    <input type="checkbox" class="form-check-input" [(ngModel)]="isComputer">
+    <label class="form-check-label">Computer</label>
+  </div>
+
+  <div>
+
+    <button class="btn btn-lg btn-primary" (click)="submit()">
+      Ready
+    </button>
+  </div>
+
+</div>
